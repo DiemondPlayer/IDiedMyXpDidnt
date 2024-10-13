@@ -1,22 +1,22 @@
 {
 	"schemaVersion": 1,
-	"id": "idmid",
-	"version": "1.0.1-1.21.1",
-	"name": "I Died, My Items Didn't",
-	"description": "Prevents items from despawning if they were dropped via a player death. Never lose your items to the 5-minute timer ever again!",
+	"id": "idmxd",
+	"version": "1.0.0-1.21.1",
+	"name": "I Died, My Xp Didn't",
+	"description": "Players Drop every bit of xp they had",
 	"authors": [
 		"Diemond_Player"
 	],
 	"contact": {
-		"sources": "https://github.com/DiemondPlayer/IDiedMyItemsDidnt"
+		"sources": ""
 	},
 	"license": "MIT",
-	"icon": "assets/idmid/icon.png",
+	"icon": "assets/idmxd/icon.png",
 	"environment": "*",
 	"entrypoints": {
 	},
 	"mixins": [
-		"idmid.mixins.json"
+		"idmxd.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.5",

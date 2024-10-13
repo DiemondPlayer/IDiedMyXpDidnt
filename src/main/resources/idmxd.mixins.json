@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.diemond_player.idmxd.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExperienceOrbEntityMixin",
+    "PlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
