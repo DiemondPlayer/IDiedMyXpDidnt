@@ -27,7 +27,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
     }
 
     @ModifyReturnValue(at = @At(value = "RETURN"), method = "getXpToDrop")
-    private int idmid$getXpToDrop(int original) {
+    private int idmxd$getXpToDrop(int original) {
         if(original!=0) {
             return IDMXDUtils.countXp(this.experienceLevel, this.experienceProgress);
         }else{
