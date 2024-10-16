@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.diemond_player.idmxd.util.IDMXDUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -36,11 +37,9 @@ public abstract class PlayerEntityMixin extends LivingEntity {
     }
 
     @Override
-    protected void dropXp(@Nullable Entity attacker) {
-        if (this.getWorld() instanceof ServerWorld serverWorld
-                && !this.isExperienceDroppingDisabled()
-                && (this.shouldAlwaysDropXp() || this.playerHitTimer > 0 && this.shouldDropXp() && this.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT))) {
-            IDMXDUtils.spawn(serverWorld, this.getPos(), this.getXpToDrop(serverWorld, attacker));
+    protected void dropXp() {
+        if (this.getWorld() instanceof ServerWorld && !this.isExperienceDroppingDisabled() && (this.shouldAlwaysDropXp() || this.playerHitTimer > 0 && this.shouldDropXp() && this.getWorld().getGameRules().getBoolean(GameRules.DO_MOB_LOOT))) {
+            IDMXDUtils.spawn((ServerWorld)this.getWorld(), this.getPos(), this.getXpToDrop());
         }
     }
 }

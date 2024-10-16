@@ -26,7 +26,7 @@ public class IDMXDUtils{
     private static boolean wasMergedIntoExistingOrb(ServerWorld world, Vec3d pos, int amount) {
         Box box = Box.of(pos, 1.0, 1.0, 1.0);
         int i = world.getRandom().nextInt(40);
-        List<ExperienceOrbEntity> list = world.getEntitiesByType(TypeFilter.instanceOf(ExperienceOrbEntity.class), box, orb -> isMergeable(orb, i, amount));
+        List<ExperienceOrbEntity> list = world.getEntitiesByType(TypeFilter.instanceOf(ExperienceOrbEntity.class), box, (orb) -> isMergeable(orb, i, amount));
         if (!list.isEmpty()) {
             ExperienceOrbEntity experienceOrbEntity = (ExperienceOrbEntity)list.get(0);
             ((IDMXDAccessor)experienceOrbEntity).idmxd$setPickingCount(((IDMXDAccessor)experienceOrbEntity).idmxd$getPickingCount() + 1);
