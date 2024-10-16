@@ -1,5 +1,6 @@
 package net.diemond_player.idmxd.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.diemond_player.idmxd.util.IDMXDAccessor;
 import net.minecraft.entity.ExperienceOrbEntity;
@@ -60,6 +61,14 @@ public abstract class ExperienceOrbEntityMixin implements IDMXDAccessor {
     private void idmxd$tick(CallbackInfo ci) {
         if(this.isDeathDrop){
             this.orbAge--;
+        }
+    }
+    @ModifyReturnValue(at = @At(value = "TAIL"), method = "isMergeable(Lnet/minecraft/entity/ExperienceOrbEntity;II)Z")
+    private static boolean idmxd$merge(boolean original, @Local(argsOnly = true) ExperienceOrbEntity orb) {
+        if(original && ((IDMXDAccessor)orb).idmxd$isDeathDrop()){
+            return false;
+        }else{
+            return original;
         }
     }
 }
