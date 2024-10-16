@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "idmxd",
-	"version": "1.1.1-1.21.1",
+	"version": "1.1.1-1.21",
 	"name": "I Died, My Xp Didn't",
 	"description": "Players drop every bit of xp they had. Xp that players drop is undespawnable",
 	"authors": [
@@ -20,7 +20,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.5",
-		"minecraft": "~1.21.1",
+		"minecraft": "~1.21",
 		"java": ">=21"
 	},
 	"suggests": {
